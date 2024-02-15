@@ -70,12 +70,11 @@ function Nav(props){
 
 function App() {
   let storedMemo = [];
-  
+
   if(localStorage.getItem('memoData')){
     storedMemo= JSON.parse(localStorage.getItem('memoData'));
   }else storedMemo=[];
 
- 
   const [memo,setMemo] = useState(storedMemo);
   const [id, setId] = useState(0);
   const [nxtId,setNxtId] = useState(1);
@@ -84,12 +83,7 @@ function App() {
   useEffect(()=>{
     localStorage.setItem('memoData', JSON.stringify(memo)) 
   }, [memo]);
-  
-  
-  
-  handleDelete(){
-
-  }
+ 
 
   return (
     <div className="App">
@@ -108,9 +102,7 @@ function App() {
       }}></Create>    
 
   
-      <Nav memo = {memo} className='memoZone' onDelete= {
-
-      }></Nav>
+      <Nav memo = {memo} className='memoZone'></Nav>
      
     </div>
     
